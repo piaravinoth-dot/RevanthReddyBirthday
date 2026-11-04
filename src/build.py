@@ -38,6 +38,8 @@ open('vasool-birthday-v2.html','w').write(PRE+inline()+'</body></html>')
 js=js_emb
 PRE2='<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n<link rel="icon" href="data:,">\n'
 open('netlify-index.html','w').write(PRE2+inline().replace('<script>\n'+js.replace('/*DBG*/','')[:40],'<script>'+PAKO+'</script>\n<script>\n'+js.replace('/*DBG*/','')[:40],1)+'</body></html>')
+# V22: the game page is site/game.html (opened from the invitation landing page as game.html?fromInvite=1). Invitation-entry mode lives in game.js + part_head.html.
+open('game.html','w').write(open('netlify-index.html').read())
 js=js_url
 open('vasool-birthday-cdn.html','w').write(build('https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js',CD))
 L='file:///tmp/claude-0/-home-claude/e8c47cfb-790e-505b-9fb3-ae2ea3624375/scratchpad/lib/node_modules/three/'

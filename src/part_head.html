@@ -2,6 +2,7 @@
 <title>Vasool Babu Birthday</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Hind:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<script>if(/[?&]fromInvite=1/.test(location.search))document.documentElement.className+=' inv';</script>
 <style>
 /*ANEK*/
 /* Layout: poster header, game stage as the centrepiece, route guide below.
@@ -163,9 +164,15 @@ footer{margin-top:48px;padding-top:16px;border-top:2px solid var(--fg);font-size
 #stage canvas,#joy,#joy *{touch-action:none}
 #result .card,#result .card *{-webkit-user-select:text;user-select:text;-webkit-touch-callout:default}
 #result .btn{-webkit-user-select:none;user-select:none}
+
+/* invitation-entry mode (?fromInvite=1): the stage is the whole page from the first paint; promo shell never renders */
+html.inv,html.inv body{background:#000!important;overflow:hidden;height:100%}
+html.inv .top,html.inv .hero,html.inv section,html.inv footer,html.inv .hint,html.inv #enter,html.inv #exitBtn{display:none!important}
+html.inv .page{max-width:none;padding:0;margin:0}
+html.inv #stage{position:fixed;inset:0;z-index:100;width:100vw;height:100vh;height:100dvh;aspect-ratio:auto;border:0;border-radius:0;touch-action:none}
 </style>
 
-<div class="page">
+<div class="page"><script>if(document.documentElement.classList.contains('inv'))document.body.classList.add('full');</script>
   <header class="top">
     <div class="brand">Vasool <b>Babu</b> Birthday</div>
     <div class="tag">A satirical 3D toll-gate game &middot; entirely fictional</div>

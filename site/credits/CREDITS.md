@@ -17,3 +17,12 @@ three.js r128 (MIT) with GLTFLoader, SkeletonUtils, BufferGeometryUtils, post-pr
 
 ## Not used in this build
 Quaternius CC0 characters/props and KayKit animations were evaluated (see report) but are NOT included in the playable build.
+
+## Landing page (V22)
+- GSAP 3.12.5 (assets/vendor/gsap.min.js) - GreenSock Standard "no charge" licence, https://gsap.com/standard-license
+- Anton and Inter fonts (assets/fonts, via @fontsource) - SIL Open Font License 1.1
+- assets/video/WELCOME.mp4 - AI-generated / digitally edited satirical composite supplied by the project owner (unchanged original).
+  assets/video/welcome-720.mp4 is a 1280x720 transcode of it used on phones; poster.webp is a frame of it.
+  PUBLICATION RIGHTS FOR THIS VIDEO ARE NOT YET CONFIRMED - private staging preview only.
+- Independent satire and parody. Not an official invitation; not issued, endorsed or approved by Revanth Reddy or any party or organisation.
+- Both pages carry noindex while on staging; remove the robots meta before any production release.

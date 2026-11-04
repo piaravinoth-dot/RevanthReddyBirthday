@@ -1,0 +1,3 @@
+assets/video/WELCOME.mp4 is the unchanged original; welcome-720.mp4 is a 1280x720 H.264/AAC transcode (phones) of the user-supplied WELCOME.mp4
+(1920x1080, 12.7 MB). poster.webp = frame at 0.35 s of the same file. No other edits. The video is an AI-generated/digitally edited
+satirical composition supplied by the project owner; publication rights must be confirmed before public deployment.
