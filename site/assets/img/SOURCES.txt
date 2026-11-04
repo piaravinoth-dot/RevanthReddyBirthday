@@ -1,3 +1,6 @@
-assets/video/WELCOME.mp4 is the unchanged original; welcome-720.mp4 is a 1280x720 H.264/AAC transcode (phones) of the user-supplied WELCOME.mp4
-(1920x1080, 12.7 MB). poster.webp = frame at 0.35 s of the same file. No other edits. The video is an AI-generated/digitally edited
-satirical composition supplied by the project owner; publication rights must be confirmed before public deployment.
+Video and poster provenance (V22)
+assets/video/WELCOME.mp4 - AI-generated satirical video supplied by the project owner. It was created from AI-generated birthday-party artwork; it is NOT genuine footage of any real event and must not be described as authentic.
+assets/video/welcome-720.mp4 - 1280x720 H.264/AAC transcode of WELCOME.mp4 (used on phones). No other edits.
+assets/video/poster.webp - frame at 0.35 s of WELCOME.mp4.
+Authorisation: the project owner confirmed on 2026-11-04 that they hold the necessary authorisation to publish and use the video and poster publicly.
+Disclosure: the website is independent, fictional political satire and must keep its visible disclosure. It does not imply that Revanth Reddy endorsed, issued or participated in the invitation.
