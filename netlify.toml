@@ -1,0 +1,16 @@
+# Vasool Babu Birthday - Netlify config (static site, no build step)
+[build]
+  publish = "site"
+  command = ""
+
+# Staging: every push to the `staging` branch gets a branch deploy at
+#   https://staging--revanthreddybirthday.netlify.app
+# (enable it once in Netlify: Site configuration > Build & deploy > Branches and deploy contexts > Branch deploys > add `staging`)
+[context.branch-deploy]
+  command = ""
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Cache-Control = "public, max-age=0, must-revalidate"

@@ -1,0 +1,12 @@
+{
+  "_note": "Single source of truth for the five toll gates. Edit a name or amount here and rebuild: the physical signboard, deck banner, payment popup, wallet history and the page text all read from it.",
+  "entryFee": 2500,
+  "ui": {"amountLabel": "Amount to Pay", "button": "CONTINUE"},
+  "gates": [
+    {"id": 1, "name": "RR Tax", "amount": 6000, "popKey": "gate_1"},
+    {"id": 2, "name": "30% Commission", "amount": 5000, "popKey": "gate_2"},
+    {"id": 3, "name": "CURE Policy", "amount": 4500, "popKey": "gate_3"},
+    {"id": 4, "name": "Future City", "amount": 3000, "popKey": "gate_4"},
+    {"id": 5, "name": "HYDRA", "amount": 4000, "popKey": "gate_5"}
+  ]
+}
