@@ -1,0 +1,2 @@
+Netlify staging contributor verification test.
+This file is outside the site/ publish directory and does not change the V20e game.
