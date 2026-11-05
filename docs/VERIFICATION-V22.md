@@ -8,3 +8,9 @@
 - Without ?fromInvite=1, game.html behaves exactly as V20f (old shell present) - direct visits to /game.html still show it.
 ## NOT verified on a real device
 Real iPhone/Android: autoplay, sound unlock, fullscreen, keyboard, joystick feel, performance, battery; real Netlify deploy.
+
+## Automated checks in CI (added after launch audit, no gameplay change)
+- `verify` (static): files present, `fromInvite=1`, noindex, disclosure text, `node --check`. **Static only - not a gameplay regression.**
+- `gameplay` (matrix d / m / l, headless Chromium, software WebGL): `tests/landing.js` (form validation, invitation, direct entry, no old shell, disclosure not overlapping) and `tests/gameplay.js` (entry fee, Gates 1-5 amounts/wallet/Vasool Babu totals, collector groups, Telugu popups, receipt ₹25,000, restart, zero page/console errors and zero failed local requests). Run locally with `node tests/server.js site 8801 &` then `node tests/gameplay.js d|m|l`.
+- The test never edits `site/game.html`; it writes a temporary debug copy to `tests/.tmp/` (git-ignored). External hosts (Google Fonts) are blocked in the test and not part of the check.
+- Not covered by CI: real devices, real audio output, fullscreen, the live Netlify URL.

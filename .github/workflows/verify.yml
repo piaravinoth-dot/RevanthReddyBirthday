@@ -24,3 +24,29 @@ jobs:
           node --check site/assets/site.js
           test -f rollback/game.v20f.original.html
           echo "game.html sha256: $(sha256sum site/game.html | cut -d' ' -f1)"
+  gameplay:
+    # Behavioural acceptance tests in headless Chromium (software WebGL). They never modify site/game.html:
+    # a throw-away copy with a debug handle is generated under tests/.tmp (git-ignored).
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        vp: [d, m, l]   # desktop 1280x720, mobile portrait 390x844, mobile landscape 844x390
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save --no-package-lock playwright@1.48.2
+          npx playwright install --with-deps chromium
+      - name: Serve site
+        run: |
+          node tests/server.js site 8801 &
+          sleep 2
+      - name: Landing -> invitation -> direct entry
+        run: node tests/landing.js ${{ matrix.vp }}
+      - name: Full game - Gates 1-5, wallet, Telugu, collectors, receipt, restart
+        run: node tests/gameplay.js ${{ matrix.vp }}
