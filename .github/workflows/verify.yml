@@ -1,0 +1,26 @@
+name: verify-site
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [staging]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Static release checks (no gameplay changes)
+        run: |
+          set -e
+          test -f site/index.html && test -f site/game.html
+          test -f site/assets/video/WELCOME.mp4 && test -f site/assets/video/welcome-720.mp4 && test -f site/assets/video/poster.webp
+          test -f site/assets/audio/vasool_bgm_from_0045.mp3
+          grep -q 'fromInvite=1' site/game.html
+          grep -q 'fromInvite=1' site/index.html
+          grep -q 'name="robots" content="noindex' site/index.html
+          grep -qi 'satire' site/index.html
+          grep -q 'Independent' site/index.html
+          grep -q 'WELCOME.mp4' site/assets/site.js
+          node --check site/assets/site.js
+          test -f rollback/game.v20f.original.html
+          echo "game.html sha256: $(sha256sum site/game.html | cut -d' ' -f1)"
