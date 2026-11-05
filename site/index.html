@@ -79,6 +79,18 @@ h1 .b em{font-style:normal;color:var(--red)}
 .out{position:fixed;inset:0;z-index:50;background:#000;opacity:0;pointer-events:none}
 .curtain{position:fixed;inset:0;z-index:60;background:#000;pointer-events:none}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+/* short desktop windows: tighten the right column so the satire disclosure never overlaps the form */
+@media(min-width:821px) and (min-height:521px) and (max-height:760px){
+ .main{align-content:start;padding-top:calc(50px + env(safe-area-inset-top,0px));padding-bottom:calc(96px + var(--sa))}
+ .inv{align-content:start;padding-top:calc(50px + env(safe-area-inset-top,0px));padding-bottom:calc(96px + var(--sa))}
+ h1{font-size:clamp(36px,min(6.6vw,9.4vh),128px)}
+ .kick{margin-bottom:1vh}
+ .reg{margin-top:2vh;padding:12px 18px}
+ .fld{margin-bottom:6px}.fld label{margin-bottom:4px}.fld input{font-size:19px;padding:5px 0 7px}.err{min-height:14px;margin-top:2px}
+ .btn{padding:1.15em 1.5em}.priv{margin-top:8px;font-size:11px;line-height:1.4}
+ .inv .nm{font-size:clamp(34px,min(6vw,9vh),110px)}.inv .p{font-size:clamp(24px,min(4vw,6.4vh),72px)}.inv .w{font-size:clamp(22px,min(3.2vw,5vh),56px)}.wal{margin:2vh 0}.wal b{font-size:clamp(34px,min(4.6vw,7vh),84px)}
+ .disc{bottom:0;padding-top:16px;padding-bottom:calc(12px + var(--sa));background:linear-gradient(0deg,#000 60%,rgba(0,0,0,0))}
+}
 /* mobile: natural scrolling page; the whole 16:9 frame sits in its own uncropped slot */
 @media(max-width:820px),(max-height:520px) and (orientation:landscape){
  html,body{overflow-x:hidden}
